@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "FrontBase.io: Supervisor is responsible for keeping the app online and OS-level interactions.",
   "scripts": {
-    "prepare": "git -C /frontbase/system/client pull && yarn --cwd ../client install && yarn --cwd ../client build && git -C /frontbase/system/server pull && yarn --cwd ../server install && yarn --cwd ../client server",
-    "start": "pm2 start ./pm2.json && yarn logs",
+    "prepare": "git -C /frontbase/system/client pull && yarn --cwd ../client install && yarn --cwd ../client build && git -C /frontbase/system/server pull && yarn --cwd ../server install && yarn --cwd ../client build",
+    "start": "concurrently 'yarn mongo' 'pm2 start ./pm2.json && yarn logs'",
+    "stop": "pm2 stop ./pm2.json",
+    "mongo": "mongod",
     "build": "tsc",
     "logs": "pm2 logs --time --merge-logs",
     "startSupervisor": "tsc && node dist/supervisor.js"
@@ -13,6 +15,7 @@
     "pm2": "^5.2.0"
   },
   "dependencies": {
+    "concurrently": "^7.2.0",
     "dotenv": "^16.0.1",
     "mongodb": "^4.6.0",
     "tsc": "^2.0.4",
