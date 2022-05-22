@@ -6,7 +6,7 @@
     "prepare": "git -C /frontbase/system/client pull && yarn --cwd ../client install && yarn --cwd ../client build && git -C /frontbase/system/server pull && yarn --cwd ../server install && yarn --cwd ../client build",
     "start": "concurrently 'yarn mongo' 'pm2 start ./pm2.json && yarn logs'",
     "stop": "pm2 stop ./pm2.json",
-    "mongo": "mongod",
+    "mongo": "mongod --dbpath /frontbase/system/db/",
     "build": "tsc",
     "logs": "pm2 logs --time --merge-logs",
     "startSupervisor": "tsc && node dist/supervisor.js"
