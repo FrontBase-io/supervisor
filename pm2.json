@@ -13,6 +13,12 @@
       "watch": true,
       "exp_backoff_restart_delay": 10,
       "args": "--no-daemon"
+    },
+    {
+      "name": "mongo",
+      "script": "/frontbase/system/supervisor/mongod.sh",
+      "watch": true,
+      "exp_backoff_restart_delay": 10
     }
   ]
 }
