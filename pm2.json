@@ -13,12 +13,6 @@
       "watch": true,
       "exp_backoff_restart_delay": 10,
       "args": "--no-daemon"
-    },
-    {
-      "name": "mongo",
-      "script": "mongod",
-      "watch": true,
-      "exp_backoff_restart_delay": 10
     }
   ]
 }

@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
-const client = new MongoClient("mongodb://localhost:27017");
 require("dotenv").config();
+const client = new MongoClient(process.env.MONGO_URL);
 
 console.log("Supervising!");
 
