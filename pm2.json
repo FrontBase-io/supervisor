@@ -16,7 +16,7 @@
     },
     {
       "name": "mongo",
-      "script": "/frontbase/system/supervisor/mongod.sh",
+      "script": "mongod",
       "watch": true,
       "exp_backoff_restart_delay": 10
     }

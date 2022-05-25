@@ -6,8 +6,9 @@ console.log("Supervising!");
 
 async function main() {
   await client.connect();
-  console.log("Mongo connection succesful.");
+  console.log("Supervisor: Mongo connection succesful.");
   const db = client.db("FrontBase");
-  console.log("Mongo connected");
+  console.log("Supervisor: Mongo connected");
+  console.log("Supervisor: has nothing to do...");
 }
 main();
