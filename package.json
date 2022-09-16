@@ -13,7 +13,9 @@
     "startSupervisor": "tsc && node dist/supervisor.js",
     "updateClient": "git -C /frontbase/system/client pull && yarn --cwd ../client install && yarn --cwd ../client build",
     "updateServer": "git -C /frontbase/system/server reset --hard && git -C /frontbase/system/server pull && yarn --cwd ../server install && yarn --cwd ../server build && yarn restartServer",
-    "updateSupervisor": "git -C /frontbase/system/supervisor reset --hard && git -C /frontbase/system/supervisor pull && yarn --cwd ../supervisor install && yarn build && yarn restartSupervisor"
+    "updateSupervisor": "git -C /frontbase/system/supervisor reset --hard && git -C /frontbase/system/supervisor pull && yarn --cwd ../supervisor install && yarn build && yarn restartSupervisor",
+    "restartSupervisor": "pm2 restart Supervisor",
+    "restartServer": "pm2 restart Server"
   },
   "devDependencies": {
     "pm2": "^5.2.0"
