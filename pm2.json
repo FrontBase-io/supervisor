@@ -13,6 +13,13 @@
       "watch": true,
       "exp_backoff_restart_delay": 10,
       "args": "--no-daemon"
+    },
+    {
+      "name": "Engine",
+      "script": "/frontbase/system/server/dist/engine.js",
+      "watch": true,
+      "exp_backoff_restart_delay": 10,
+      "args": "--no-daemon"
     }
   ]
 }
