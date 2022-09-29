@@ -16,7 +16,7 @@
     },
     {
       "name": "Engine",
-      "script": "/frontbase/system/server/dist/engine.js",
+      "script": "/frontbase/system/engine/dist/engine.js",
       "watch": true,
       "exp_backoff_restart_delay": 10,
       "args": "--no-daemon"
